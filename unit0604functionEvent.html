@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,button{
+            width: 100%;
+            height: 7vh;
+            padding-top: 0.8em;
+            padding-bottom: 0.8em;
+            margin-top:0.8em ;
+            border: 1px gold solid;
+            border-radius: 50px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>函數與事件</h1>
+    <div id="divMorning">Good Morning</div>
+    <div id="divAfternoon">Good Afternoon</div>
+    <div id="divLucky">Lucky Number</div>
+    <button id="btnStop" style="display: none;">STOP</button>
+
+    <script>
+        const divMorning=document.getElementById('divMorning')
+        const divAfternoon=document.getElementById('divAfternoon')
+        const divLucky=document.getElementById('divLucky')
+        const btnStop=document.getElementById('btnStop')
+
+        divMorning.onclick=function(){
+            window.alert('歐嗨喲')
+        }
+        divMorning.onmouseover=function(){
+            this.innerHTML="早安";
+            this.style.cursor='pointer';
+            setBG(this)
+        }
+        divMorning.onmouseout=function(){
+            this.innerHTML="Good Morning";
+            clearBG(this)
+        }
+
+        divAfternoon.addEventListener('click',greetingBG)
+        divAfternoon.addEventListener('mouseover',function(){
+            this.innerHTML="午安";
+            this.style.cursor='pointer'
+            setBG(this)
+        })
+         divAfternoon.addEventListener('mouseout',function(){
+            this.innerHTML="Good Afternoon";
+            clearBG(this)
+        })
+
+         divLucky.addEventListener('mouseover',function(){
+            
+            this.style.height='20vh'
+            this.style.fontSize='5em'
+            btnStop.style='block'
+        })
+        divLucky.addEventListener('mousemove',getNumber)
+        btnStop.addEventListener('click',removeEvent)
+
+
+        function setBG(obj){
+            obj.style.backgroundColor='pink';
+        }
+        function clearBG(obj){
+            obj.style.backgroundColor='inherit';
+        }
+        function greetingBG(){
+            window.alert("摳你機挖")
+        }
+        function getNumber(){
+            var num=Math.floor(Math.random()*49)+1;
+            divLucky.innerHTML=num
+        }
+        function removeEvent(){
+            divLucky.removeEventListener('mousemove',getNumber)
+            window.alert('停止產生幸運數字')
+        }
+        
+    </script>
+    
+</body>
+</html>

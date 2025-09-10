@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 3</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        @keyframes moveRectangle {
+            0%{
+                transform: translate(0,0);
+            }
+            25%{
+                transform: translateX(1180px);
+            }
+            50%{
+                transform: translate(1180px,1180px);
+            }
+            75%{
+                transform: translate(0,1180px);
+
+            }
+            100%{
+                transform: translate(0,0);
+            }
+        }
+        .animated{
+            width: 50px;
+            height: 50px;
+            animation:moveRectangle 6s linear infinite;
+        }
+        div:nth-of-type(1){
+            width: 100%;
+            
+            
+        }
+        div:nth-of-type(2){
+            position: fixed;
+            top: 100px;
+            left: 100px;          
+            
+        }
+        div:nth-of-type(2){
+            width: 200px;
+            height: 200px;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="animated">
+        <img src="images/icons/1.png">
+    </div>
+    <div>
+        <img src="images/drink/9.jpg">
+    </div>
+
+</body>
+</html>

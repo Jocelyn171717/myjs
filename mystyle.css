@@ -1,0 +1,54 @@
+body{
+            margin: 0px;
+        }
+
+        header{
+            width: 100%;
+            height: 25vh;
+            /*background-color: black*/
+            background-image: url(images/coffee08.jpg);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1{
+            font-size: 5 rem;
+            color: azure;
+        }
+        
+        main{
+            margin: 3rem;
+        }
+        
+        p{
+            color: #9E5242;
+        }
+
+        button{
+            width: 20vw;
+            height: 10vh;
+            border-radius: 25px;
+            background-color: red;
+            color: aliceblue;
+            font-size: 1.5rem;
+            border: #9E5242 5px solid;
+            cursor: pointer;
+            
+        }
+
+        button:hover{
+
+            background-color: aqua;
+        }
+
+        footer{
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            background-color: #d6dbb5;
+            color: #9E5242;
+            width: 100%;
+            text-align: center;
+        }

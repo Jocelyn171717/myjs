@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: brown;
+            color: aliceblue;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        button:hover{
+            background-color: aqua;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <custom-button></custom-button>
+    
+    <script>
+        class MyButton extends HTMLElement{
+            constructor(){
+                super();
+                const shadow=this.attachShadow({mode:'open'})
+                shadow.innerHTML=`
+                <style>
+                    button{
+                        background-color: brown;
+                        color: aliceblue;
+                        border: none;
+                        padding: 15px 25px;
+                        cursor: pointer;
+                        border-radius: 8px;
+                    }
+                    button:hover{
+                        background-color: aqua;
+                        color: blue;
+                    }
+                </style>
+                <button>預購</button>
+                `
+            }
+        }
+
+        customElements.define('custom-button', MyButton);
+    </script>
+</body>
+</html>

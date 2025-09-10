@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巢狀迴圈</title>
+</head>
+<body>
+    <style>
+        table{
+            width: 100%;
+            border: 2px cornflowerblue solid;
+            border-collapse: collapse;
+        }
+
+        td{
+            border: 1px coral solid;
+            padding:1.2em;
+            text-align:center;
+
+        }
+    </style>
+    <h1>
+        99乘法表
+    </h1>
+    <p id="result">目前的值</p>
+
+    <script>
+        document.write("<table border=1>")       
+            var k=0;
+            for(var i=1;i<=9;i++){
+                document.write("<tr onmouseover='setTrBG(this)' onmouseout='clearTrBG(this)'>")
+                for(var j=1;j<=9;j++){
+                        
+                    k=i*j;
+                    document.write("<td onmouseenter='setTdFont(this)' onmouseleave='clearTdFont(this)'>"+i+"x"+j+"="+k+"</td>");
+                }
+                document.write("</tr>")
+            }
+   
+        document.write("</table>")    
+
+    function setTrBG(obj){
+        obj.style.backgroundColor='yellowgreen';
+    }
+    function clearTrBG(obj){
+        obj.style.backgroundColor='transparent';
+    }
+
+    function setTdFont(obj){
+        obj.style.color='red';
+        obj.style.cursor='pointer'
+        
+        document.getElementById('result').innerHTML=obj.innerHTML
+    }
+    function clearTdFont(obj){
+        obj.style.color='inherit';
+    }
+
+    </script>
+</body>
+
+   
+</html>
